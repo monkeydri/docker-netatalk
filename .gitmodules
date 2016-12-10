@@ -1,0 +1,4 @@
+[submodule "shini"]
+	path = shini
+	url = https://github.com/monkeydri/shini.git
+	branch = allow-spaces

@@ -11,6 +11,7 @@ RUN apt-get update \
         $DEPS \
         tracker \
         avahi-daemon \
+        jq \
         curl wget \
         &&  wget      "http://ufpr.dl.sourceforge.net/project/netatalk/netatalk/3.1.8/netatalk-3.1.8.tar.gz" \
         &&  curl -SL  "http://ufpr.dl.sourceforge.net/project/netatalk/netatalk/3.1.8/netatalk-3.1.8.tar.gz" | tar xvz
@@ -57,6 +58,7 @@ RUN ./configure \
                    &&  mkdir /media/share
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY shini /shini
 COPY afp.conf /etc/afp.conf
 
 CMD ["/docker-entrypoint.sh"]

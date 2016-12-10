@@ -38,7 +38,7 @@ docker run --detach --volume [host_path]:/etc/afp.conf --volume [host_path]:/med
 
 Other ways of enabling customizations of the [Netatalk] configuration file is by mounting the `/etc` by `--volume /etc` such that this directory will remain persistent between restarts and then modify the configuration file. However the first option would be the recommended way to do this.
 
-### Setting up access credentials
+### Setting up access credentials with env vars
 
 To setup access credentials you should supply the following environment variables from the table below.
 
@@ -72,6 +72,17 @@ log file = /var/log/netatalk.log
 path = /media/share
 valid users = %USER%
 ```
+
+### Setting up access credentials with host mounted users file
+
+Alternatively, multiple users can be defined in a json file that needs to be mounted on the container at `/etc/users.json` in afp_users array. Password, uid and gid can be defined for each user. See example users.json file profided for syntax.
+
+#### Example
+
+```bash
+docker run --detach --volume [host_path]:/etc/users.json --publish 548:548 cptactionhank/netatalk:latest
+```
+
 
 ### Service discovery
 
