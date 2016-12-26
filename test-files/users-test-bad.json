@@ -1,0 +1,24 @@
+[
+	{
+		"username": "user1",
+		"password": "abcdefghijkl01",
+		"uid": "555",
+		"gid": "555"
+	},
+	{
+		"password": "abcdefghijkl01",
+		"uid": "556",
+		"gid": "556"
+	},
+	{
+		"username": "user3",
+		"password": "abcdefghijkl01",
+		"uid": "557",
+		"gid": "555"
+	},
+	[
+		"username": "user3",
+		"password": "abcdefghijkl01",
+		"gid": "555"
+	}
+]

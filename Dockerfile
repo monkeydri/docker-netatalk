@@ -58,7 +58,6 @@ RUN ./configure \
                    &&  mkdir /media/share
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
-COPY shini /shini
 COPY afp.conf /etc/afp.conf
 
-CMD ["/docker-entrypoint.sh"]
+CMD ["/docker-entrypoint.sh", "/etc/users.json", "/etc/afp.conf"]

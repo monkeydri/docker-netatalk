@@ -75,7 +75,22 @@ valid users = %USER%
 
 ### Setting up access credentials with host mounted users file
 
-Alternatively, multiple users can be defined in a json file that needs to be mounted on the container at `/etc/users.json` in afp_users array. Password, uid and gid can be defined for each user. See example users.json file profided for syntax.
+Alternatively, multiple users can be defined in a json file that needs to be mounted on the container at `/etc/users.json` in a json array. Password, uid and gid can be defined for each user. See example below :
+
+```
+[
+	{
+		"username": "user1",
+		"password": "password1",
+		"uid": "555",
+		"gid": "555"
+	},
+	{
+		"username": "user2",
+		"password": "password2",
+	}
+]
+```
 
 #### Example
 
